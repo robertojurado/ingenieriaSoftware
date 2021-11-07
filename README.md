@@ -1,2 +1,2 @@
-# ingenier-aSoftware
+# ingenieriaSoftware
 Proyecto ingeniería de software
