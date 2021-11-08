@@ -1,0 +1,81 @@
+
+form{
+	padding-top: 150px;
+	padding-bottom: 220px;
+}
+
+header{
+	background: #f7f7f7;
+}
+
+img{
+	height: 70px;
+	margin-top: 50px;
+	width: 450px;
+}
+
+input{
+	border: 0;
+	height: 50px;
+	margin-top: 30px;
+	padding-left: 15px;
+	width: 350px;
+}
+
+p{
+	font-size:22px;
+}
+
+
+ul{
+	margin-top: 20px;
+	padding-left:45px; 
+}
+
+li{
+	list-style: none;
+}
+
+#boton{
+	background: #d0c6e1;
+	color:#958ba4;
+	margin-left: -50px; 
+	margin-top: 20px; 
+	-webkit-border-radius: 20px;
+	width: 120px;
+}
+
+#input1{
+	background: #e4dfbf;
+}
+
+#input2{
+	background: #ccc2dc;
+}
+
+#areaFormulario{
+	background: #f5f3c3;
+}
+
+#fila2 {
+	margin-top: 20px;
+}
+
+#vinculo1{
+	color: #7f7ea3;
+}
+
+.icono-placeholder{
+	font-family: "Font Awesome 5 Free"; 
+	font-weight: 900;
+}
+
+.row {
+	margin-left: 30px; 
+}
+
+.vinculos2{
+	margin-left: -85px;
+	text-decoration: none;
+}
+
