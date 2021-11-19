@@ -31,6 +31,7 @@
 	</header>
 
 	<div id="areaFormulario">
+
 		<form method="post" action="menu.php" name="frmLogin">
 			<div class="form-group row" >
 				<div class="col-sm-4"></div>
@@ -46,7 +47,9 @@
 					<input type="Password" class="icono-placeholder" placeholder="  Ingresar Password" id="input2"
 					name="txtClave" required>
 				</div>
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+
+				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-sm-4"></div>
