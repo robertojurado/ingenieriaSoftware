@@ -15,7 +15,7 @@
 		}
 
 		public function Actualizar() {
-			
+				
 		}
 
 		public function Consultar() {

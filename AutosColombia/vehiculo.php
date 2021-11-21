@@ -28,8 +28,19 @@
 					$filas = mysqli_num_rows($resultado);
 
 					if (isset($filas) && $filas > 0) {
-						$mensaje = "El vehículo ya está registrado";
-						include_once "registroVehiculo.php";
+						echo '<table class="table">';
+						echo '<tr>';
+						echo "<th>Placa</th>";
+						echo "<th>Marca</th>";
+						echo "<th>Color</th>";
+						echo "<th>Clase vehículo</th>";
+						echo "<th>Cédula propietario</th>";
+						echo '<tr>';
+						for	
+						echo '</table>'
+					}else{
+						$mensaje = "Lo sentimos, el vehículo no ha sido registrado aún en nuestra base de datos";
+						include 'registroVehiculo.php';
 					}
 
 					mysqli_free_result($resultado);	
@@ -46,6 +57,8 @@
 			$resultado = $conexion->query($insercion);
 			if (!$resultado) {
 				die("Acceso a base de datos fallido");
+			}else{
+				$mensaje = 'Vehículo registrado exiosamente';
 			}
 		}
 
