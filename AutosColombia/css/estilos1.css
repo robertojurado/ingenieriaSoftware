@@ -1,7 +1,10 @@
 
 form{
 	padding-top: 150px;
-	padding-bottom: 220px;
+}
+
+body{
+	background: #f5f3c3;
 }
 
 header{
@@ -54,7 +57,7 @@ li{
 }
 
 #areaFormulario{
-	background: #f5f3c3;
+	
 }
 
 #fila2 {
@@ -68,6 +71,10 @@ li{
 .icono-placeholder{
 	font-family: "Font Awesome 5 Free"; 
 	font-weight: 900;
+}
+
+.mensaje{
+	color: #FF0000;
 }
 
 .row {

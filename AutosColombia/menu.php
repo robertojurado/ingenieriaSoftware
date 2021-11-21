@@ -1,34 +1,3 @@
-<?php
-	session_start();
-	require_once('baseDatos.php');
-	if (isset($_POST['txtUsuario']) && isset($_POST['txtClave'])) {
-		$usuario = $_POST['txtUsuario'];
-		$_SESSION['usuario'] = $usuario;	
-		$clave = $_POST['txtClave'];
-
-		$consulta = "SELECT * from `empleado` where `Usuario` = '$usuario' and `Clave` = '$clave' ";
-
-		$resultado = mysqli_query($conexion, $consulta);
-
-		if (!empty($resultado) && isset($resultado)) {
-			$filas = mysqli_num_rows($resultado);
-		}
-
-		if (isset($filas) && $filas > 0) {
-			header("Location:menu.php");
-		}else{
-			header("Location:index.php");
-		}	
-	   
-		if (!empty($resultado) && isset($resultado)) {
-			mysqli_free_result($resultado);
-		}
-		
-		mysqli_close($conexion);
-
-	}	
-
-?>
 
 <!DOCTYPE html>
 <html>
@@ -61,7 +30,8 @@
 
 	<div class="row">
 		<div class="col-sm-12" id="titulo6">
-			<h6><strong>Bienvenid@ <?php echo $_SESSION["usuario"] ?>, ¿qué deseas hacer?
+			<h6><strong>Bienvenid@ <?php require_once "validacion.php";
+			echo $_SESSION["usuario"] ?>, ¿qué deseas hacer?
 			</strong></h6>
 		</div>
 	</div>
@@ -72,8 +42,8 @@
 			<ul>
 				<li><a href="registroCliente.php">Registrar cliente</a></li>
 				<li><a href="registroVehiculo.php">Registrar vehículo</a></li>
-				<li><a href="ingresoVehiculo.php">Registrar ingreso vehículo</a></li>
-				<li><a href="registrarSalida.php">Registrar salida vehículo</a></li>
+				<li><a href="ingresoSalidaVehiculo.php">Registrar ingreso y salida de vehículos</a></li>
+				<li><a href="administrarCelda.php">Administrar celda</a></li>
 				<li><a href="generarCobro.php">Generar cobro mensualidad</a></li>
 			</ul>
 		</div>

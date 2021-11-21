@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="css/estilos1.css" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8eb4c02fac.js" crossorigin="anonymous"></script>
-	<!--<script src="validacion.js"></script>-->
 </head>
 <body>
 	<header>
@@ -32,7 +31,7 @@
 
 	<div id="areaFormulario">
 
-		<form method="post" action="menu.php" name="frmLogin">
+		<form method="post" action="validacion.php" name="frmLogin">
 			<div class="form-group row" >
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
@@ -66,7 +65,22 @@
 						</div>
 					</div>	
 				</div>
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					
+				</div>
+				<div class="row">
+					<div class="col-sm-4"></div>
+					<div class="col-sm-4">
+						<p class="mensaje"><?php require_once "validacion.php"; 
+											   if (isset($mensaje) && !empty($mensaje)) {
+											    	echo "$mensaje";
+											    } else{
+											    	echo "";
+											    }
+						?></p>
+					</div>
+					<div class="col-sm-4"></div>
+				</div>
 			</div>
 		</form>
 	</div>	
