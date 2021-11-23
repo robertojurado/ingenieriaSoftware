@@ -31,21 +31,10 @@ input{
 	border:0; 
 	color:#958ba4;
 	height: 40px;
-	margin-left: 300px; 
+	margin-left: 10px; 
 	margin-top: 20px; 
 	-webkit-border-radius: 20px;
-	width: 60px;
-}
-
-.botonR{
-	background: #d0c6e1;
-	border:0; 
-	color:#958ba4;
-	height: 40px;
-	margin-left: 300px; 
-	margin-top: 20px; 
-	-webkit-border-radius: 20px;
-	width: 20px;
+	width: 200px;
 }
 
 .form-group{

@@ -40,10 +40,9 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4" id="areaLista">
 			<ul>
-				<li><a href="registroCliente.php">Registrar cliente</a></li>
-				<li><a href="registroVehiculo.php">Registrar vehículo</a></li>
-				<li><a href="ingresoSalidaVehiculo.php">Registrar ingreso y salida de vehículos</a></li>
-				<li><a href="administrarCelda.php">Administrar celda</a></li>
+				<li><a href="gestionarCliente.php">Gestionar cliente</a></li>
+				<li><a href="gestionarVehiculo.php">Gestionar vehículo</a></li>
+				<li><a href="gestionarCelda.php">Gestionar celda</a></li>
 				<li><a href="generarCobro.php">Generar cobro mensualidad</a></li>
 			</ul>
 		</div>

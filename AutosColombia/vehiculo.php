@@ -1,6 +1,6 @@
 <?php 
 	
-	require_once "dbautoscolombia";
+	require_once "dbautoscol.php";
 
 	class Vehiculo {
 
@@ -28,19 +28,11 @@
 					$filas = mysqli_num_rows($resultado);
 
 					if (isset($filas) && $filas > 0) {
-						echo '<table class="table">';
-						echo '<tr>';
-						echo "<th>Placa</th>";
-						echo "<th>Marca</th>";
-						echo "<th>Color</th>";
-						echo "<th>Clase vehículo</th>";
-						echo "<th>Cédula propietario</th>";
-						echo '<tr>';
-						for	
-						echo '</table>'
+						$valores = mysqli_fetch_array($query);							
 					}else{
 						$mensaje = "Lo sentimos, el vehículo no ha sido registrado aún en nuestra base de datos";
-						include 'registroVehiculo.php';
+						include 'consulta
+						Vehiculo.php';
 					}
 
 					mysqli_free_result($resultado);	

@@ -41,43 +41,44 @@
 			<form method="post" action="operacionRegistroV.php">
 				<div class="form-group">
 					<input type="text" name="placaVehiculo" class="icono-placeholder" 
-					placeholder=" Escribe aquí el número de placa del vehículo">
+					placeholder=" Escribe aquí el número de placa del vehículo" required>
 				</div>
 				<div class="form-group">
 					<input type="text" name="marcaVehiculo" class="icono-placeholder"
-					placeholder=" Escribe aquí la marca del vehículo">
+					placeholder=" Escribe aquí la marca del vehículo" required>
 				</div>		
 				<div class="form-group">
 					<input type="text" name="colorVehiculo" class="icono-placeholder"
-					placeholder=" Escribe aquí el color del vehículo">
+					placeholder=" Escribe aquí el color del vehículo" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="modeloVehiculo" class="icono-placeholder"
-					placeholder=" Escribe aquí el modelo del vehículo">
+					placeholder=" Escribe aquí el modelo del vehículo" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="claseVehiculo" class="icono-placeholder"
-					placeholder=" Escribe aquí la clase del vehículo">
+					placeholder=" Escribe aquí la clase del vehículo" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="cedulaPropietario" class="icono-placeholder"
-					placeholder=" Escribe aquí el número de cédula del propietario del vehículo">
-				</div>
-				<div class="row">
-					<div class="col-sm-3"></div>
-					<div class="col-sm-6">
-						<input type="submit" name="consultarPlaca" value="Consultar placa" class="botonR">
-						<input type="submit" name="registrarVehiculo" value="Registrar vehículo" class="botonR">
-						<p><?php 
-					       if (isset($mensaje)) {
-					       		echo $mensaje;				
-					       				}				
-					   ?></p>
-					</div>
-					<div class="col-sm-3"></div>
+					placeholder=" Escribe aquí el número de cédula del propietario del vehículo" required>
 				</div>
 			</form>
 		</div>
+		<div class="col-sm-3"></div>	
+	</div>
+
+	<div class="row">	
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="submit" name="consultarPlaca" value="Consultar placa">
+				<p><?php
+					require_once 'operacionRegistroV.php'; 	 
+					    if (isset($mensaje)) {
+					       	echo $mensaje;				
+					       }				
+				   ?></p>
+		</div>		   
 		<div class="col-sm-3"></div>
 	</div>
 	

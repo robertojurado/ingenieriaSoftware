@@ -41,36 +41,47 @@
 			<form method="post" action="">
 				<div class="form-group">
 					<input type="text" name="cedulaCliente" class="icono-placeholder" 
-					placeholder=" Escribe aquí el número de cédula del cliente">
+					placeholder=" Escribe aquí el número de cédula del cliente" required>
 				</div>
 				<div class="form-group">
 					<input type="text" name="nombresCliente" class="icono-placeholder"
-					placeholder=" Escribe aquí los nombres del cliente">
+					placeholder=" Escribe aquí los nombres del cliente" required>
 				</div>		
 				<div class="form-group">
 					<input type="text" name="apellidosCliente" class="icono-placeholder"
-					placeholder=" Escribe aquí los apellidos del cliente">
+					placeholder=" Escribe aquí los apellidos del cliente" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="telefonoFijoCliente" class="icono-placeholder"
-					placeholder=" Escribe aquí el número de teléfono fijo del cliente">
+					placeholder=" Escribe aquí el número de teléfono fijo del cliente" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="telefonoMovilCliente" class="icono-placeholder"
-					placeholder=" Escribe aquí el número de teléfono móvil del cliente">
+					placeholder=" Escribe aquí el número de teléfono móvil del cliente" required>
 				</div>
 				<div class="form-group">
 					<input type="tel" name="direccionCliente" class="icono-placeholder"
-					placeholder=" Escribe aquí la dirección del cliente">	
+					placeholder=" Escribe aquí la dirección del cliente" required>	
 				</div>
-					<input type="submit" name="Enviar" value="Enviar" id="boton">
+					
 			</form>
 		</div>
 		<div class="col-sm-3"></div>
+	</div>	
+
+	<div class="row">	
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<input type="submit" name="consultarPlaca" value="Consultar placa">
+				<p><?php
+					require_once 'operacionRegistroV.php'; 	 
+					    if (isset($mensaje)) {
+					       	echo $mensaje;				
+					       }				
+				   ?></p>
+		</div>		   
+		<div class="col-sm-3"></div>
 	</div>
 	
-
-
-
 </body>
 </html>
