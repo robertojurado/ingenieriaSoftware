@@ -40,7 +40,7 @@
 		<div class="col-sm-4" id="areaLista">
 			<ul>
 				<li><a href="consultarCliente.php">Consultar cliente</a></li>
-				<li><a href="registroCliente.php">Registrar cliente</a></li>
+				<li><a href="registroUsuario.php">Registrar cliente</a></li>
 				<li><a href="actualizarCliente.php">Actualizar cliente</a></li>
 				<li><a href="borrarCliente.php">Borrar cliente</a></li>
 			</ul>

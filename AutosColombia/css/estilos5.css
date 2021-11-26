@@ -26,6 +26,10 @@ input{
 	width: 100%; 
 }
 
+table{
+	margin-top: 60px;
+}
+
 #boton{
 	background: #d0c6e1;
 	border:0; 
@@ -37,6 +41,14 @@ input{
 	width: 200px;
 }
 
+#consultar{
+	margin-top: 30px;
+}
+
+.consultar{
+	margin-left: 60px;
+}
+
 .form-group{
 	display: flex;
 	flex-direction: column;
@@ -44,9 +56,16 @@ input{
 	justify-content: center;
 }
 
+
 .icono-placeholder{
 	font-family: "Font Awesome 5 Free"; 
 	font-weight: 900;
+}
+
+.mensaje{
+	color:#FF0000;
+	font-size:16px;
+	text-align: center;
 }
 
 #titulo{

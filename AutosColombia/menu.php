@@ -40,7 +40,7 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4" id="areaLista">
 			<ul>
-				<li><a href="gestionarCliente.php">Gestionar cliente</a></li>
+				<li><a href="gestionarUsuario.php">Gestionar usuario</a></li>
 				<li><a href="gestionarVehiculo.php">Gestionar vehículo</a></li>
 				<li><a href="gestionarCelda.php">Gestionar celda</a></li>
 				<li><a href="generarCobro.php">Generar cobro mensualidad</a></li>

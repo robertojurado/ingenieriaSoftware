@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,12 +39,86 @@
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-			<form method="post" action="operacionConsultaV.php">
-				<input type="number" name="placa">
-				<input type="submit" value="Consultar" id="boton">
+			<form method="post" action="">
+				<input type="number" class="icono-placeholder" name="placa" placeholder=" Escribe aquí el número de placa del vehículo" required>
+				<input type="submit" value="Consultar" id="consultar">
 			</form>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
+
+	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Placa</th>
+					<th scope="col">Marca</th>
+					<th scope="col">Color</th>
+					<th scope="col">Modelo</th>
+					<th scope="col">Clase</th>
+					<th scope="col">Cédula Propietario</th>	
+				</tr>
+			</thead>
+			<tbody>
+
+				<?php
+					require_once 'vehiculo.php';
+					if (isset($_POST['placa'])) {
+						$placa = $_POST['placa'];	
+					}
+					
+					$mivehiculo = new Vehiculo();
+
+					if (isset($placa)) {
+
+						$resultados = $mivehiculo->Consultar($placa);
+
+						$numFilas = mysqli_num_rows($resultados);
+
+						if (isset($numFilas) && $numFilas > 0) {
+
+							while ($filas=$resultados->fetch_assoc()) {
+				?>		
+				<tr>
+								<td><?php echo $filas['PlacaID']; ?></td>
+								<td><?php echo $filas['Marca']; ?></td>
+								<td><?php echo $filas['Color']; ?></td>
+								<td><?php echo $filas['Modelo']; ?></td>
+								<td><?php echo $filas['ClaseVehiculo']; ?></td>
+								<td><?php echo $filas['CedulaID']; 
+										   $mensaje = "";?></td>
+				</tr>			
+				<?php
+							}
+
+						}else{
+
+							$mensaje = "No se hallaron registros relacionados con el número de placa ".$placa;
+
+						}
+
+						$resultados->free();
+						if (isset($mysqli)) {
+							$mysqli->close();
+						}	
+
+					}
+				?>	
+				
+			</tbody>
+		</table>
+		<p class="mensaje"><?php 
+			if (isset($mensaje)) {
+				echo $mensaje;
+			}
+				
+		    ?></p>
+		 </div>
+		 <div class="col-sm-3"></div>   
+
+	</div>
+
 </body>
 </html>

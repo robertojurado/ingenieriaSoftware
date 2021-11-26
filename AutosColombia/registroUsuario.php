@@ -40,7 +40,7 @@
 		<div class="col-sm-6">
 			<form method="post" action="">
 				<div class="form-group">
-					<input type="text" name="cedulaCliente" class="icono-placeholder" 
+					<input type="number" name="cedulaCliente" class="icono-placeholder" 
 					placeholder=" Escribe aquí el número de cédula del cliente" required>
 				</div>
 				<div class="form-group">
@@ -62,26 +62,43 @@
 				<div class="form-group">
 					<input type="tel" name="direccionCliente" class="icono-placeholder"
 					placeholder=" Escribe aquí la dirección del cliente" required>	
+
+					<input type="submit" name="consultarPlaca" value="Registrar datos">
+
+					<?php
+					require_once 'usuario.php'; 	 
+					    if (isset($_POST["cedulaCliente"]) && isset($_POST["nombresCliente"]) 
+					    	&& isset($_POST["apellidosCliente"]) && isset($_POST["telefonoFijoCliente"])
+					        && isset($_POST["telefonoMovilCliente"]) && isset($_POST["direccionCliente"])) {
+
+					    	$cedula = $_POST["cedulaCliente"];
+					    	$nombre = $_POST["nombresCliente"];
+					    	$apellidos = $_POST["apellidosCliente"];
+					    	$telFijo = $_POST["telefonoFijoCliente"];
+					    	$telMovil = $_POST["telefonoMovilCliente"];
+					    	$direccion = $_POST["direccionCliente"];
+
+					    	$miusuario1 = new usuario();
+
+					    	$mensaje = $miusuario1->Registrar($cedula, $nombre, $apellidos, $telFijo, $telMovil, $direccion);
+
+					    }
+			?>
+				<p class="mensaje"><?php
+					if (isset($mensaje)) {
+					 	echo $mensaje;
+					 }else{
+					 	echo "";
+					 } 
+					?></p>
+				
+
 				</div>
 					
 			</form>
 		</div>
 		<div class="col-sm-3"></div>
 	</div>	
-
-	<div class="row">	
-		<div class="col-sm-3"></div>
-		<div class="col-sm-6">
-			<input type="submit" name="consultarPlaca" value="Consultar placa">
-				<p><?php
-					require_once 'operacionRegistroV.php'; 	 
-					    if (isset($mensaje)) {
-					       	echo $mensaje;				
-					       }				
-				   ?></p>
-		</div>		   
-		<div class="col-sm-3"></div>
-	</div>
 	
 </body>
 </html>

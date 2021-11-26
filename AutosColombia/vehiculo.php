@@ -1,6 +1,6 @@
 <?php 
-	
-	require_once "dbautoscol.php";
+
+	require 'conexion.php';
 
 	class Vehiculo {
 
@@ -17,41 +17,38 @@
 
 		public function Consultar($Placa) {
 
-			if (isset($Placa)) {
-				
-				$query = "SELECT * from `autoscolombia` where `PlacaID` = '$placa'";
+			$con = new conexion();
 
-				$resultado = mysqli_query($conexion, $consulta);
+			$miConexion1 = $con->miConexion;
+		
+			$consulta = "SELECT `PlacaID`, `Marca`, `Color`, `Modelo`, `ClaseVehiculo`, `CedulaID` from `vehiculo` where `PlacaID` = '$Placa'";
+			$resultado = $miConexion1->query($consulta);
 
-				if (!empty($resultado) && isset($resultado)) {
-			
-					$filas = mysqli_num_rows($resultado);
+			$miConexion1->close();
+			return $resultado;
 
-					if (isset($filas) && $filas > 0) {
-						$valores = mysqli_fetch_array($query);							
+		}	
+
+		public function Registrar($placa, $marca, $color, $modelo, $claseVehiculo, $cedulaID) {
+
+			$con2 = new conexion();
+
+			$miConexion2 = $con2->miConexion;
+
+			$insercion = "INSERT INTO `vehiculo` (`PlacaID`, `Marca`, `Color`, `Modelo`,`ClaseVehiculo`, `CedulaID`) values ('$placa', '$marca', '$color', '$modelo', '$claseVehiculo', '$cedulaID')";
+
+					$resultado1 = $miConexion2->query($insercion);
+					
+					if ($resultado1==1) {
+					    $nota = "Los datos del vehículo fueron registrados exitosamente";
+					    $miConexion2->close(); 
+					    return $nota;
 					}else{
-						$mensaje = "Lo sentimos, el vehículo no ha sido registrado aún en nuestra base de datos";
-						include 'consulta
-						Vehiculo.php';
+					    $nota = "Ha ocurrido un error al registrar los datos del vehículo.";
+					    $miConexion2->close(); 
+					    return $nota;
 					}
 
-					mysqli_free_result($resultado);	
-					mysqli_close($conexion);
-
-				}
-
-			}
-
-		}
-
-		public function Registrar($placa, $Marca, $Color, $Modelo, $ClaseVehiculo, $CedulaID) {
-			$insercion = "INSERT INTO `vehiculo`(`PlacaID`, `Marca`, `Color`, `Modelo`, `ClaseVehiculo`, `CedulaID`) VALUES (`$placa`, `$Marca`, `$Color`, `$Modelo`, `CedulaID`)";
-			$resultado = $conexion->query($insercion);
-			if (!$resultado) {
-				die("Acceso a base de datos fallido");
-			}else{
-				$mensaje = 'Vehículo registrado exiosamente';
-			}
 		}
 
 		public function GestionarEntrada() {

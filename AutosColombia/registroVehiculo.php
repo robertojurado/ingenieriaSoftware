@@ -38,9 +38,9 @@
 	<div class="row" id="">
 		<div class="col-sm-3"></div>
 		<div class="col-sm-6">
-			<form method="post" action="operacionRegistroV.php">
+			<form method="post" action="">
 				<div class="form-group">
-					<input type="text" name="placaVehiculo" class="icono-placeholder" 
+					<input type="number" name="placaVehiculo" class="icono-placeholder" 
 					placeholder=" Escribe aquí el número de placa del vehículo" required>
 				</div>
 				<div class="form-group">
@@ -52,34 +52,49 @@
 					placeholder=" Escribe aquí el color del vehículo" required>
 				</div>
 				<div class="form-group">
-					<input type="tel" name="modeloVehiculo" class="icono-placeholder"
+					<input type="text" name="modeloVehiculo" class="icono-placeholder"
 					placeholder=" Escribe aquí el modelo del vehículo" required>
 				</div>
 				<div class="form-group">
-					<input type="tel" name="claseVehiculo" class="icono-placeholder"
+					<input type="text" name="claseVehiculo" class="icono-placeholder"
 					placeholder=" Escribe aquí la clase del vehículo" required>
 				</div>
 				<div class="form-group">
-					<input type="tel" name="cedulaPropietario" class="icono-placeholder"
+					<input type="number" name="cedulaPropietario" class="icono-placeholder"
 					placeholder=" Escribe aquí el número de cédula del propietario del vehículo" required>
+
+					<input type="submit" name="consultarPlaca" value="Registrar datos">
+			<?php
+					require_once 'vehiculo.php'; 	 
+					    if (isset($_POST["placaVehiculo"]) && isset($_POST["marcaVehiculo"]) 
+					    	&& isset($_POST["colorVehiculo"]) && isset($_POST["modeloVehiculo"])
+					        && isset($_POST["claseVehiculo"]) && isset($_POST["cedulaPropietario"])) {
+
+					    	$placa = $_POST["placaVehiculo"];
+					    	$marca = $_POST["marcaVehiculo"];
+					    	$color = $_POST["colorVehiculo"];
+					    	$modelo = $_POST["modeloVehiculo"];
+					    	$clase = $_POST["claseVehiculo"];
+					    	$cedula = $_POST["cedulaPropietario"];
+
+					    	$mivehiculo2 = new vehiculo();
+
+					    	$mensaje = $mivehiculo2->Registrar($placa, $marca, $color, $modelo, $clase, $cedula);
+
+					    }
+			?>
+				<p class="mensaje"><?php
+					if (isset($mensaje)) {
+					 	echo $mensaje;
+					 }else{
+					 	echo "";
+					 } 
+					?></p>
+
 				</div>
 			</form>
 		</div>
 		<div class="col-sm-3"></div>	
-	</div>
-
-	<div class="row">	
-		<div class="col-sm-3"></div>
-		<div class="col-sm-6">
-			<input type="submit" name="consultarPlaca" value="Consultar placa">
-				<p><?php
-					require_once 'operacionRegistroV.php'; 	 
-					    if (isset($mensaje)) {
-					       	echo $mensaje;				
-					       }				
-				   ?></p>
-		</div>		   
-		<div class="col-sm-3"></div>
 	</div>
 	
 </body>
