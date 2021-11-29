@@ -15,7 +15,7 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<div class="row">
-					<img src="imagenes/logoAutosColombia.jpeg">
+					<a href="menu.php" alt="Menú AutoColombia"><img src="imagenes/logoAutosColombia.jpeg" alt="AutoColombia"></a>
 				</div>
 				<div class="row">
 					<p><a id="vinculo1"><strong>www.AutoColombia.com</strong></a>
@@ -39,10 +39,10 @@
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4" id="areaLista">
 			<ul>
-				<li><a href="consultarCliente.php">Consultar cliente</a></li>
-				<li><a href="registroUsuario.php">Registrar cliente</a></li>
-				<li><a href="actualizarCliente.php">Actualizar cliente</a></li>
-				<li><a href="borrarCliente.php">Borrar cliente</a></li>
+				<li><a href="consultarCliente.php">Consultar usuario</a></li>
+				<li><a href="registroUsuario.php">Registrar usuario</a></li>
+				<li><a href="actualizarCliente.php">Actualizar usuario</a></li>
+				<li><a href="borrarCliente.php">Borrar usuario</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-4"></div>

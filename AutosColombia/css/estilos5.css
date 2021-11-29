@@ -9,7 +9,7 @@ header{
 }
 
 form{
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 img{
@@ -21,7 +21,7 @@ input{
 	background: #ccc2dc;
 	border: 0;
 	height: 50px;
-	margin-top: 15px;
+	margin-top: 5px;
 	padding-left: 10px;
 	width: 100%; 
 }
@@ -43,6 +43,12 @@ table{
 
 #consultar{
 	margin-top: 30px;
+}
+
+.actualizar{
+	margin-left:50px;
+	margin-right:40px;
+	width:120px;
 }
 
 .consultar{
@@ -69,7 +75,7 @@ table{
 }
 
 #titulo{
-	margin-top: 30px;
+	margin-top: 15px;
 	text-align: center;
 }
 

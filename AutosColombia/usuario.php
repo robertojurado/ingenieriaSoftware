@@ -10,51 +10,89 @@
 		var $TelefonoFijo;
 		var $TelefonoMovil;
 		var $Direccion;
+		var $fecha;
 
 		//Método constructor
 		public function Usuario() {
 
 		}
 
-		public function Actualizar() {
+		public function Actualizar($CedulaID, $Nombre, $Apellido, $TelefonoFijo, $TelefonoMovil, $Direccion,
+								   $fecha) {
+			
+			$con = new conexion();
+			$miConexion = $con->miConexion;	
+
+			$actualizacion = "UPDATE usuario SET `CedulaID`= '$CedulaID',
+												 `Nombre` = '$Nombre',
+												 `Apellido` = '$Apellido',
+												 `Telefono` = '$TelefonoFijo',
+												 `Movil` = '$TelefonoMovil',
+												 `Direccion` = '$Direccion',
+												 `fechaIngreso` = '$fecha' 
+							  				WHERE `CedulaID` = '$CedulaID'";
+
+			$resultado = $miConexion->query($actualizacion);
+			
+			if ($resultado) {
 				
+				$mensaje = "Los datos fueron actualizados exitosamente";
+				$miConexion->close();
+				return $mensaje;
+
+			}else{
+
+				$mensaje = "Se presentó un error al intentar actualizar los datos";
+				$miConexion->close();
+				return $mensaje;
+
+			}				  				
+
 		}
 
 		public function Consultar($CedulaID) {
 
 			$con = new conexion();
-
-			$miConexion1 = $con->miConexion;
+			$miConexion = $con->miConexion;
 		
-			$consulta = "SELECT `CedulaID`, `Nombre`, `Apellido`, `Telefono`, `Movil`, `Direccion` from `usuario` where `CedulaID` = '$CedulaID'";
-			$resultado = $miConexion1->query($consulta);
+			$consulta = "SELECT `CedulaID`, `Nombre`, `Apellido`, `Telefono`, `Movil`, `Direccion`, `fechaIngreso`
+			 from `usuario` where `CedulaID` = '$CedulaID'";
+			$resultado = $miConexion->query($consulta);
 
-			$miConexion1->close();
+			$miConexion->close();
 			return $resultado;
 
 		}
 
 		public function Eliminar(){
 
+			$con = new conexion();
+			$miConexion = $con->miConexion;
+
+			
+
+
+
 		}
 
-		public function Registrar($CedulaID, $Nombre, $Apellido, $TelefonoFijo, $TelefonoMovil, $Direccion) {
+		public function Registrar($CedulaID, $Nombre, $Apellido, $TelefonoFijo, $TelefonoMovil, 
+								  $Direccion, $fecha) {
 
-			$con2 = new conexion();
+			$con = new conexion();
+			$miConexion = $con->miConexion;
 
-			$miConexion2 = $con2->miConexion;
+			$insercion = "INSERT INTO `usuario` (`CedulaID`, `Nombre`, `Apellido`, `Telefono`,`Movil`,
+			 `Direccion`,`fechaIngreso`) values ('$CedulaID', '$Nombre', '$Apellido', '$TelefonoFijo', '$TelefonoMovil', '$Direccion', '$fecha')";
 
-			$insercion = "INSERT INTO `usuario` (`CedulaID`, `Nombre`, `Apellido`, `Telefono`,`Movil`, `Direccion`) values ('$CedulaID', '$Nombre', '$Apellido', '$TelefonoFijo', '$TelefonoMovil', '$Direccion')";
-
-					$resultado1 = $miConexion2->query($insercion);
+					$resultado1 = $miConexion->query($insercion);
 					
 					if ($resultado1==1) {
 					    $nota = "Los datos del usuario fueron registrados exitosamente";
-					    $miConexion2->close(); 
+					    $miConexion->close(); 
 					    return $nota;
 					}else{
 					    $nota = "Ha ocurrido un error al registrar los datos del usuario.";
-					    $miConexion2->close(); 
+					    $miConexion->close(); 
 					    return $nota;
 					}
 					

@@ -11,6 +11,11 @@ header{
 	padding-top: 60px;
 }
 
+img{
+	height: 70px;
+	width: 450px;
+}
+
 li{
 	font-size: 20px;
 	list-style: none;
@@ -27,6 +32,8 @@ ul{
 	padding-left: 50px;
 	text-align: left;
 }
+
+
 
 
 

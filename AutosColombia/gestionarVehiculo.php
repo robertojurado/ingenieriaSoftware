@@ -15,7 +15,7 @@
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
 				<div class="row">
-					<img src="imagenes/logoAutosColombia.jpeg">
+					<a href="menu.php" alt="Menú AutoColombia"><img src="imagenes/logoAutosColombia.jpeg" alt="AutoColombia"></a>
 				</div>
 				<div class="row">
 					<p><a id="vinculo1"><strong>www.AutoColombia.com</strong></a>
@@ -42,7 +42,6 @@
 				<li><a href="consultarVehiculo.php">Consultar vehículo</a></li>
 				<li><a href="registroVehiculo.php">Registrar vehículo</a></li>
 				<li><a href="actualizarVehiculo.php">Actualizar vehículo</a></li>
-				<li><a href="borrarVehiculo.php">Borrar vehículo</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-4"></div>

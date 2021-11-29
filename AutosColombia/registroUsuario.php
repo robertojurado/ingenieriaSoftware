@@ -59,9 +59,13 @@
 					<input type="tel" name="telefonoMovilCliente" class="icono-placeholder"
 					placeholder=" Escribe aquí el número de teléfono móvil del cliente" required>
 				</div>
-				<div class="form-group">
+				<div>
 					<input type="tel" name="direccionCliente" class="icono-placeholder"
 					placeholder=" Escribe aquí la dirección del cliente" required>	
+				</div>
+				<div class="form-group">
+					<input type="date" name="fechaIngreso" class="icono-placeholder"
+					placeholder=" Escribe aquí la fecha de ingreso del cliente" required>	
 
 					<input type="submit" name="consultarPlaca" value="Registrar datos">
 
@@ -69,7 +73,8 @@
 					require_once 'usuario.php'; 	 
 					    if (isset($_POST["cedulaCliente"]) && isset($_POST["nombresCliente"]) 
 					    	&& isset($_POST["apellidosCliente"]) && isset($_POST["telefonoFijoCliente"])
-					        && isset($_POST["telefonoMovilCliente"]) && isset($_POST["direccionCliente"])) {
+					        && isset($_POST["telefonoMovilCliente"]) && isset($_POST["direccionCliente"])
+					    	&& isset($_POST["fechaIngreso"])) {
 
 					    	$cedula = $_POST["cedulaCliente"];
 					    	$nombre = $_POST["nombresCliente"];
@@ -77,10 +82,11 @@
 					    	$telFijo = $_POST["telefonoFijoCliente"];
 					    	$telMovil = $_POST["telefonoMovilCliente"];
 					    	$direccion = $_POST["direccionCliente"];
+					    	$fecha = $_POST["fechaIngreso"];
 
 					    	$miusuario1 = new usuario();
 
-					    	$mensaje = $miusuario1->Registrar($cedula, $nombre, $apellidos, $telFijo, $telMovil, $direccion);
+					    	$mensaje = $miusuario1->Registrar($cedula, $nombre, $apellidos, $telFijo, $telMovil, $direccion, $fecha);
 
 					    }
 			?>
